@@ -6,7 +6,7 @@ def zone_det(pixel):
     f=128-f #we invert the row index as the image has the 0 at the top and the 128 at the bottom
     if c<55 and f>23*c/55 + 31:
         zone=2
-    elif c>105 and f>-23*c/55+97:#l'equacio no està bé
+    elif c>105 and f>-23*c/55 + 97:
         zone=3
     else:
         zone=1

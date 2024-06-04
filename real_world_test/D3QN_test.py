@@ -257,14 +257,13 @@ with g2.as_default():
             column_index=bright_pix%n_columns
             pix_brightness=state[row_index, column_index]
             
-            """
-            if row_index>120:
-                state=state[0:120,:]
+            if row_index>70:
+                state=state[0:70,:]
                 state=iimage.fromarray(state)
                 state=state.resize([160, 128], iimage.LANCZOS)
                 state=state.convert('L')
                 state=np.array(state)
-            """
+            
             bright_pix=np.argmin(state)
             row_index=bright_pix//n_columns
             column_index=bright_pix%n_columns
@@ -348,15 +347,15 @@ with g2.as_default():
                 bright_pix=np.argmin(next_state)
                 row_index=bright_pix//n_columns
                 column_index=bright_pix%n_columns
-                """
-                if row_index>120:
+                
+                if row_index>70:
                     print('Image cut and reshaped')
-                    next_state=next_state[0:120,:]
+                    next_state=next_state[0:70,:]
                     next_state=iimage.fromarray(next_state)
                     next_state=next_state.resize([160, 128], iimage.LANCZOS)
                     next_state=next_state.convert('L')
                     next_state=np.array(next_state)
-                 """
+                
                 n_rows=next_state[:,1].size
                 n_columns=next_state[1,:].size
                 bright_pix=np.argmin(next_state)
