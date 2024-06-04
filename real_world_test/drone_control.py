@@ -13,7 +13,7 @@ from geometry_msgs.msg import Twist
 class PID():
     def __init__(self):
         # init_node
-        rospy.init_node('sample', anonymous=False)
+        #rospy.init_node('sample', anonymous=False)
         self._error = 0.0 # previous error term
         self._integral = 0.0 # previous integral term
         self.delta_t = 0.2 # command frequency
